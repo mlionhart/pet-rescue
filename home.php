@@ -17,7 +17,7 @@
             <div class="carousel-caption">
                 <h1 class="display-2">Pet Rescue</h1>
                 <h3>The #1 Spot for Animal Rescue</h3>
-                <button type="button" class="btn btn-outline-light btn-lg">Get Started</button>
+                <button type="button" class="btn btn-outline-light btn-lg"><a href="register.php">Get Started</a></button>
             </div>
         </div>
         <div class="carousel-item">
@@ -50,5 +50,8 @@
     </div>
     <hr class="my-4">
 </div>
+
+<!-- load JavaScript -->
+<script src="js/script.js"></script>
 
 <?php require 'inc/footer.inc.php'; ?>
