@@ -172,6 +172,14 @@ hr.light-100 {
         max-width: 80vw;
         margin: 0 auto;
     }
+    footer {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+    body {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
     #slides {
         max-width: 80vw;
         margin: 0 auto;

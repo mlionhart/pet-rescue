@@ -44,9 +44,10 @@ fetch('helper/is_logged_in.php')
                             // hide logout button
                             logout.style.display = 'none'
                             // add a message to the message div that user has been logged out
-                            document.querySelector('#message').innerHTML = '<p>You have been logged out</p>'
+                            // document.querySelector('#message').innerHTML = '<p>You have been logged out</p>'
                             // add welcome message to h1
-                            document.querySelector('h1').innerText = 'Welcome to our Site!'
+                            // document.querySelector('h1').innerText = 'Welcome to our Site!'
+                            document.location.href = 'home.php'
                         }
                     })
             })

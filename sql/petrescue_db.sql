@@ -46,7 +46,11 @@ CREATE TABLE `post` (
 	`animal_id` INT(11) NOT NULL,
 	`user_id` INT(11) NOT NULL,
 	`title` VARCHAR(200) NOT NULL,
+	`animal_name` VARCHAR(50) NOT NULL,
+	`species` VARCHAR(50) NOT NULL,
+	`breed` VARCHAR(50) NOT NULL,
 	`description` VARCHAR(500) NOT NULL,
+	`img_src` VARCHAR(200) NOT NULL,
 	`created_on` DATE NOT NULL,
 	PRIMARY KEY (`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $row = $result->fetch_assoc();
         $_SESSION['first_name'] = $row['first_name'];
         $_SESSION['username'] = $row['username'];
+        $_SESSION['user_id'] = $row['user_id'];
 
         header('location: rescue.php');
     // otherwise, display error message

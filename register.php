@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // if database query is a success
     } else {
         // create a new directory for the user for images to be stored
-        folder_checker($username);
+        // folder_checker($username);
         // display success message and login link
         echo '<div>You are now ready to go!';
         echo '<a href="login.php" title="Login Page">Login</a></div>';
