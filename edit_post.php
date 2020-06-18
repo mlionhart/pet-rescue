@@ -161,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <br><br>
         <input type="hidden" name="post_id" value="<?php echo (isset($post_id) ? $post_id : '');?>">
     </div>
-    <input class="btn btn-primary new-post" type="submit" value="Create Post">
+    <input class="btn btn-primary new-post" type="submit" value="Update Post">
 </form>
 <!-- end of form -->
 
