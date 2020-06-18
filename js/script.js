@@ -1,17 +1,3 @@
-// function to show/hide password
-function showPassword() {
-    const passwordField = document.querySelector('#password')
-    const showPassword = document.querySelector('#showPassword')
-
-    if (showPassword.innerText == 'Show Password') {
-        showPassword.innerText = 'Hide Password'
-        passwordField.type = 'text'
-    } else if (showPassword.innerText === 'Hide Password') {
-        passwordField.type = 'password'
-        showPassword.innerText = 'Show Password'
-    }
-}
-
 // is the user logged in or not?
 // fetch is a way in js to execute code behind the scenes of the browser
 fetch('helper/is_logged_in.php')
