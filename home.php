@@ -22,24 +22,24 @@ display_message();
             <img src="img/background-sad.webp" alt="background 1">
             <div class="carousel-caption">
                 <h1 class="display-2">Pet Rescue</h1>
-                <h3>The #1 Spot for Animal Rescue</h3>
-                <button type="button" class="btn btn-outline-light btn-lg"><a href="register.php">Get Started</a></button>
+                <h3 class="homeh3">The #1 Spot for Animal Rescue</h3>
+                <button type="button" class="btn btn-outline-light btn-lg btn-primary"><a href="register.php">Get Started</a></button>
             </div>
         </div>
         <div class="carousel-item">
             <img src="img/background.jpeg" alt="background 2">
             <div class="carousel-caption">
                 <h1 class="display-2">Pet Rescue</h1>
-                <h3>The #1 Spot for Animal Rescue</h3>
-                <button type="button" class="btn btn-outline-light btn-lg"><a href="register.php">Get Started</a></button>
+                <h3 class="homeh3">The #1 Spot for Animal Rescue</h3>
+                <button type="button" class="btn btn-outline-light btn-lg btn-primary"><a href="register.php">Get Started</a></button>
             </div>
         </div>
         <div class="carousel-item">
             <img src="img/background3.jpg" alt="background 3">
             <div class="carousel-caption">
                 <h1 class="display-2">Pet Rescue</h1>
-                <h3>The #1 Spot for Animal Rescue</h3>
-                <button type="button" class="btn btn-outline-light btn-lg"><a href="register.php">Get Started</a></button>
+                <h3 class="homeh3">The #1 Spot for Animal Rescue</h3>
+                <button type="button" class="btn btn-outline-light btn-lg home_button btn-primary"><a href="register.php">Get Started</a></button>
             </div>
         </div>
     </div>

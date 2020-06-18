@@ -23,6 +23,14 @@ footer a:hover {
     width: 200px;
 }
 
+.homeh3 {
+    margin-top: -30px;
+}
+
+.carousel-caption {
+    font-weight: bold;
+}
+
 /* .special::after {
     content: ' | ';
 } */
