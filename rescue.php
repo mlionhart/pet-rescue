@@ -42,7 +42,7 @@ display_message();
 
 <div class="container-fluid rescue">
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="col-sm-6 col-md-12 col-lg-12">
             <div class="filter">
                 <label>Filter: &nbsp;</label>
                 <a href="rescue.php?filter=all">All</a>

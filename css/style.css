@@ -193,6 +193,13 @@ hr.light-100 {
 }
 
 @media (max-width: 768px) {
+    .card {
+        /* max-width: 500px; */
+        margin: 0 auto;
+    }
+    .filter {
+        text-align: center;
+    }
     .carousel-caption {
         top: 45%;
     }
@@ -215,6 +222,7 @@ hr.light-100 {
 }
 
 @media (max-width: 576px) {
+    
     .carousel-caption {
         top: 40%;
     }
@@ -234,6 +242,17 @@ hr.light-100 {
     .social a {
         font-size: 2em;
         padding: .7rem;
+    }
+
+    .card {
+        width: 400px;
+        padding: 20px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+
+    .filter {
+        text-align: center;
     }
 }
 
