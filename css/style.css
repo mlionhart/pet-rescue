@@ -9,6 +9,24 @@ h1 {
     border-radius: 30%;
 }
 
+.filter {
+    width: 600px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.bold {
+    width: 200px;
+}
+
+/* .special::after {
+    content: ' | ';
+} */
+
 nav h2 {
     color: white;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2020 at 08:01 AM
+-- Generation Time: Jun 18, 2020 at 05:31 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -55,6 +55,16 @@ CREATE TABLE `post` (
   `created_on` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`post_id`, `user_id`, `username`, `email`, `title`, `animal_name`, `species`, `breed`, `description`, `img_src`, `created_on`) VALUES
+(13, 1, 'mikerhart', 'mike@mike.com', 'Cool husky', 'Chief', 'Dog', 'Husky', 'No description', 'husky.jpg', '2020-06-18 16:05:43'),
+(14, 9, 'mikerhart2', 'hart@hart.com', 'Mean Doberman', 'Chucky', 'Dog', 'Doberman Pinscher', 'none', 'doberman.jpg', '2020-06-18 16:10:29'),
+(15, 9, 'mikerhart2', 'hart@hart.com', 'Cheeky Cat', 'Gumby', 'Cat', 'Himalayan', 'No Description', 'himalayan.jpg', '2020-06-18 16:46:33'),
+(16, 11, 'mikerhart3', 'michael@michael.com', 'Dumb Lab', 'Doofus', 'Dog', 'Black Lab', 'No Description', 'black lab.jpg', '2020-06-18 16:57:47');
+
 -- --------------------------------------------------------
 
 --
@@ -77,7 +87,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `username`, `email`, `first_name`, `last_name`, `password`) VALUES
 (1, 'mikerhart', 'mike@mike.com', 'Mike', 'Hart', '4388d32f5d77a84bcea8f3502135bf79bc21deb1fa669e00775cc083a50d15fe3c47dc242f6712f24c831b73426fe7b49ffe032d59663859813f41318008c3d6'),
 (2, 'dudehart', 'dude@dude.com', 'Dude', 'Hart', '2702d90669d032e1319cef013dc53e40b408fd358adfc31d44db1579783e0610c33cc759650facb6505969d945e71394df1a6d8d5310e729449a5b5ef7f4b309'),
-(9, 'mikerhart2', 'hart@hart.com', 'Michael', 'Hart', '4aae917fcb29de3ea213a7ac3a6520cc4caac798b179fd1a79e6e3be39fab4e25cda5fb2309cd1992f7a9615864f5a9ad174b5384226cd7573389276ffccda2d');
+(9, 'mikerhart2', 'hart@hart.com', 'Michael', 'Hart', '4aae917fcb29de3ea213a7ac3a6520cc4caac798b179fd1a79e6e3be39fab4e25cda5fb2309cd1992f7a9615864f5a9ad174b5384226cd7573389276ffccda2d'),
+(11, 'mikerhart3', 'michael@michael.com', 'Michael', 'Hart', 'b09c54442ec7919a11717340a11ecf3b85ce1a32a68f957a5b5aecf513056ec76c2ad8d2d6cfc317f18a5e8af462fa41046fcb4f5e7435a59f7e841daa84cbb3');
 
 --
 -- Indexes for dumped tables
@@ -112,13 +123,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

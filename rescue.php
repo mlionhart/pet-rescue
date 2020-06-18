@@ -17,7 +17,19 @@ if (!isset($_SESSION['loggedin'])) {
     header('location: home.php?message=You%20Must%20Log%20in%20First!');
 }
 
-$sql = "SELECT * FROM post order by post_id DESC";
+if (isset($_GET['filter'])) {
+    $filter = $_GET['filter'];
+    if ($filter == 'dogs') {
+        $sql = "SELECT * FROM post WHERE species='Dog' order by post_id DESC";
+    } elseif ($filter == 'cats') {
+        $sql = "SELECT * FROM post WHERE species='Cat' order by post_id DESC";
+    } else {
+        $sql = "SELECT * FROM post order by post_id DESC";
+    }
+} else {
+    $sql = "SELECT * FROM post order by post_id DESC";
+}
+
 
 $result = $db->query($sql);
 
@@ -31,6 +43,14 @@ display_message();
 <div class="container-fluid rescue">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="filter">
+                <label>Filter: &nbsp;</label>
+                <a href="rescue.php?filter=all">All</a>
+                <span> | </span>
+                <a href="rescue.php?filter=dogs">Dogs</a>
+                <span> | </span>
+                <a class="special" href="rescue.php?filter=cats">Cats</a>
+            </div>
         <?php display_posts($result); ?>
         </div>
     </div> <!-- end row -->

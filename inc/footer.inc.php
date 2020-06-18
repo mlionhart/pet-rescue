@@ -24,7 +24,7 @@
                 <img src="" alt="Logo">
                 <hr class="light">
                 <p><a href="tel:3609803083">360-980-3083</a></p>
-                <p>mikerhart@yahoo.com</p>
+                <p><a href="mailto:mikerhart@yahoo.com">mikerhart@yahoo.com</a></p>
                 <p>100 Fake St.</p>
                 <p>Vancouver, WA 98684</p>
             </div>

@@ -25,7 +25,7 @@
                 <a href="rescue.php" class="nav-link">Rescue</a>
             </li>
             <li class="nav-item <?=echoActiveClass("new_post");?>">
-                <a href="new_post.php" class="nav-link">New Post</a>
+                <a href="new_post.php" class="nav-link">Create Post</a>
             </li>
             <!-- <li class="nav-item">
                 <a href="#" class="nav-link">Contact</a>

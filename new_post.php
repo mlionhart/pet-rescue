@@ -1,5 +1,6 @@
 <?php require_once 'inc/functions.inc.php';
 
+
 $pageTitle = "New Post"; 
 
 // start session
@@ -13,7 +14,7 @@ require 'inc/header.inc.php';
 require 'inc/nav.inc.php'; 
 
 if (!isset($_SESSION['loggedin'])) {
-    header('home.php');
+    header('location: home.php?message=You%20Must%20Log%20in%20First!');
 }
 
 $error_bucket = [];
@@ -92,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $sql = "INSERT INTO post (user_id, username, email, title, animal_name, species, breed, description, img_src, created_on) 
                     VALUES($user_id,'$username','$email','$title','$animal_name','$species','$breed','$description','$img_src','$date')";
     
-        // echo $sql;
+        echo $sql;
     
         // query database with built sql
         $result = $db->query($sql);

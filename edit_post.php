@@ -13,12 +13,10 @@ require 'inc/header.inc.php';
 require 'inc/nav.inc.php'; 
 
 if (!isset($_SESSION['loggedin'])) {
-    header('home.php');
+    header('home.php?message=You%20Must%20Log%20In!!');
 }
 
 $error_bucket = [];
-
-// $post_id = '';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -55,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // -------------- database handling ---------------
     // get the post form data
     if (!empty($_POST['post_id'])) {
-        $post_id = $_POST['post_id'];        
+        $post_id = $_POST['post_id'];       
     }
 
     if (empty($_POST['title'])) {
@@ -91,16 +89,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $animal_name = $db->real_escape_string($_POST['animal_name']);
     $date = date('Y-m-d G:i:s');
     $user_id = $_SESSION['user_id'];
+    // $post_id = $_GET['post_id'];
 
     if (count($error_bucket) == 0) {
         // build sql query
-        $sql = "UPDATE post SET title='$title', animal_name='$animal_name', species='$species', breed='$breed', description='$description', img_src='$img_src' WHERE post_id='$post_id'";
+        $sql = "UPDATE post SET title='$title', animal_name='$animal_name', species='$species', breed='$breed', description='$description', img_src='$img_src' WHERE post_id=$post_id";
     
         // echo $sql;
     
         // query database with built sql
         $result = $db->query($sql);
-        echo $sql;
     
         // if database query fails, display error message
         if (!$result) {
@@ -131,6 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $species = $row['species'];
         $breed = $row['breed'];
         $description = $row['description'];
+        $post_id = $row['post_id'];
     }
 }
 
@@ -160,7 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <br>
         <input type="file" name="file" id="image">
         <br><br>
-        <input type="hidden" name="id" value="<?php echo (isset($post_id) ? $post_id : '');?>">
+        <input type="hidden" name="post_id" value="<?php echo (isset($post_id) ? $post_id : '');?>">
     </div>
     <input class="btn btn-primary new-post" type="submit" value="Create Post">
 </form>

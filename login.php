@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 
-<p id="registerMessage">Don't have an account? <a href="register.php">Sign Up</a></p>
+<p id="registerMessage" style="text-align:center;margin-top:1em;">Don't have an account? <a href="register.php">Sign Up</a></p>
 
 <h1>Login</h1>
 
