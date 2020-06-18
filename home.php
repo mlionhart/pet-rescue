@@ -1,8 +1,14 @@
-<?php $pageTitle = "Home"; ?>
+<?php require_once 'inc/functions.inc.php';
+
+$pageTitle = "Home"; ?>
 
 <?php require 'inc/header.inc.php'; ?>   
 
-<?php require 'inc/nav.inc.php'; ?>
+<?php require 'inc/nav.inc.php'; 
+
+display_message();
+
+?>
 
 <!-- Image slider -->
 <div id="slides" class="carousel slide" data-ride="carousel">
@@ -22,9 +28,19 @@
         </div>
         <div class="carousel-item">
             <img src="img/background.jpeg" alt="background 2">
+            <div class="carousel-caption">
+                <h1 class="display-2">Pet Rescue</h1>
+                <h3>The #1 Spot for Animal Rescue</h3>
+                <button type="button" class="btn btn-outline-light btn-lg"><a href="register.php">Get Started</a></button>
+            </div>
         </div>
         <div class="carousel-item">
             <img src="img/background3.jpg" alt="background 3">
+            <div class="carousel-caption">
+                <h1 class="display-2">Pet Rescue</h1>
+                <h3>The #1 Spot for Animal Rescue</h3>
+                <button type="button" class="btn btn-outline-light btn-lg"><a href="register.php">Get Started</a></button>
+            </div>
         </div>
     </div>
     <!-- carousel controls -->
@@ -45,10 +61,10 @@
             <p class="lead">A pet rescue organization allow individuals to adopt homeless and animals as well as create posts for lost and found animals.</p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-            <a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">About Us</button></a>
+            <a href="register.php"><button type="button" class="btn btn-outline-secondary btn-lg">Get Started</button></a>
         </div>
     </div>
-    <hr class="my-4">
+    <!-- <hr class="my-4"> -->
 </div>
 
 <!-- load JavaScript -->

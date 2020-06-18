@@ -1,24 +1,56 @@
 <?php
-// creates folder for logged-in user if not already in existence
-function folder_checker($username) {
-    if (!is_dir($username)) {
-        mkdir('uploads/' . $username);
-    }
-}
+
 
 // function for displaying posts
 function display_posts($result) {
     while ($row = $result->fetch_assoc()) {
-        echo '<div>';
-        echo '<p>' . $_SESSION['username'] . '</p>';
-        echo '<p>Date:' . $row['date'] . '</p>';
-        echo '<h2>' . $row['title'] . '</h2>';
+        $imageEncoded = rawurlencode($row['img_src']);
+        echo '<div class="card">';
+        // only show delete button if current user is the owner of the post
+        // if ($_SESSION['user_id'] == $row['user_id']) {
+        //     // echo "<div id=\"delete\"><a href=\"edit_post.php?post_id={$row['post_id']}&user_id={$row['user_id']}\" onclick=\"return confirm('Are you sure?');\">Edit</a>" . ' | ' . "<a href=\"delete_post.php?post_id={$row['post_id']}&user_id={$row['user_id']}\" onclick=\"return confirm('Are you sure?');\">Delete</a></div>";            
+        // }
+        echo "<a id=\"delete\" href=\"delete_post.php?post_id={$row['post_id']}&user_id={$row['user_id']}\" onclick=\"return confirm('Are you sure?');\">Delete Post</a>";            
+        echo '<p><strong>Date:  </strong>' . $row['created_on'] . '</p>';
+        echo '<p><strong>User:  </strong>' . $_SESSION['username'] . '</p>';
+        echo '<h2 class="card-title">' . $row['title'] . '</h2>';
+        echo "<img class=\"card-img\" src=uploads/{$imageEncoded}>";
         echo '<p><strong>Animal Name:  </strong>' . $row['animal_name'] . '</p>';
         echo '<p><strong>Species:  </strong>' . $row['species'] . '</p>';
         echo '<p><strong>Breed:  </strong>' . $row['breed'] . '</p>';
         echo '<p><strong>Description:  </strong>' . $row['description'] . '</p>';
-        echo "<img src=../uploads/\"{$row['img_src']}\">";
+        echo '<p><strong>Contact Email:  </strong>' . '<a href=' . '"mailto:' . $_SESSION['email'] . '">' . $_SESSION['email'] . '</a></p>';
         echo '</div>';
     }
+}
+
+function display_message(){
+    // if message in url
+    if (isset($_GET['message'])) {
+        $message = $_GET['message'];
+        echo '<div class="mt-4 alert alert-success col-lg-6 mx-auto" role="alert">';
+        echo $message;
+        echo '</div>';
+    }
+}
+
+function display_error_bucket($error_bucket){
+    echo '<p>The following errors were detected:</p>';
+    echo '<div class="pt-4 alert alert-warning" role="alert">';
+        echo '<ul>';
+        foreach ($error_bucket as $text){
+            echo '<li>' . $text . '</li>';
+        }
+        echo '</ul>';
+    echo '</div>';
+    echo '<p>All of these fields are required. Please fill them in.</p>';
+}
+
+function echoActiveClass($requestUri)
+{
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
+    if ($current_file_name == $requestUri)
+        echo 'active';
 }
 ?>

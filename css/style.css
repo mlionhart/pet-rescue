@@ -1,5 +1,55 @@
 h1 {
     text-align: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#logo {
+    width: 40px;
+    border-radius: 30%;
+}
+
+nav h2 {
+    color: white;
+}
+
+.connect h1 {
+    margin-bottom: 10px;
+}
+
+.new-post, .register-form, .login-form {
+    margin-bottom: 2em;
+}
+
+hr {
+    /* height: 1px; */
+    /* background: black; */
+}
+
+.card {
+    position: relative;
+    width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+#registerMessage {
+    margin: 0 auto;
+}
+
+.card p {
+    margin: 1px;
+}
+
+#delete {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.rescue img {
+    max-width: 600px;
 }
 
 /* Navbar */
@@ -60,6 +110,11 @@ h1 {
 }
 
 /* Social icons */
+.social {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
 .social a {
     font-size: 4.5em;
     padding: 3rem;
@@ -92,6 +147,7 @@ footer {
     background-color: #3f3f3f;
     color: #d5d5d5;
     padding-top: 2rem;  
+    margin-top: 1em;
 }
 hr.light {
     border-top: 1px solid #d5d5d5;

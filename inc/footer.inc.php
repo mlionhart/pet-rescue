@@ -1,8 +1,9 @@
 <!-- Connect -->
-<div class="container-fluid padding">
+<div class="container-fluid padding connect">
+    <hr>
     <div class="row text-center padding">
         <div class="col-12">
-            <h2>Connect</h2>
+            <h1>Connect</h1>
         </div>
         <div class="col-12 social padding">
             <a href="#"><i class="fab fa-facebook"></i></a>
@@ -12,6 +13,7 @@
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
+    <hr>
 </div>
 
 <!-- Footer -->

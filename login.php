@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['loggedin'] = 1;
         
         $row = $result->fetch_assoc();
+        $_SESSION['email'] = $row['email'];
         $_SESSION['first_name'] = $row['first_name'];
         $_SESSION['username'] = $row['username'];
         $_SESSION['user_id'] = $row['user_id'];
@@ -41,6 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
+
+<p id="registerMessage">Don't have an account? <a href="register.php">Sign Up</a></p>
 
 <h1>Login</h1>
 
@@ -55,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br>
     <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
     <br>
-    <input class="btn btn-primary" type="submit" value="Login">
+    <input class="btn btn-primary login-form" type="submit" value="Login">
 </form>
 <!-- end of form -->
 

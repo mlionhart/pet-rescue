@@ -18,7 +18,10 @@ if (!isset($_SESSION['loggedin'])) {
 
 $error_bucket = [];
 
+// $post_id = '';
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
     // ------------- Image processing ----------------
 
     // Define errors in an array
@@ -51,6 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     // -------------- database handling ---------------
     // get the post form data
+    if (!empty($_POST['post_id'])) {
+        $post_id = $_POST['post_id'];        
+    }
+
     if (empty($_POST['title'])) {
         array_push($error_bucket,"<p>A title is required.</p>");
     } else {
@@ -76,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 
     if ($target_file == '') {
-        array_push($error_bucket,"<p>You must upload an image.</p>");
+        echo "<p>you must upload an image</p>";
     } else {
         $img_src = $target_file;
     }
@@ -84,27 +91,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $animal_name = $db->real_escape_string($_POST['animal_name']);
     $date = date('Y-m-d G:i:s');
     $user_id = $_SESSION['user_id'];
-    $email = $_SESSION['email'];
-    $username = $_SESSION['username'];
 
     if (count($error_bucket) == 0) {
         // build sql query
-        $sql = "INSERT INTO post (user_id, username, email, title, animal_name, species, breed, description, img_src, created_on) 
-                    VALUES($user_id,'$username','$email','$title','$animal_name','$species','$breed','$description','$img_src','$date')";
+        $sql = "UPDATE post SET title='$title', animal_name='$animal_name', species='$species', breed='$breed', description='$description', img_src='$img_src' WHERE post_id='$post_id'";
     
         // echo $sql;
     
         // query database with built sql
         $result = $db->query($sql);
+        echo $sql;
     
         // if database query fails, display error message
         if (!$result) {
-            echo '<div class="reg_div">There was a problem creating your post!</div>';
+            echo '<div class="reg_div">There was a problem updating your post!</div>';
         // if database query is a success
         } else {
             // display success message and login link
             // echo '<div>Post Added!';
-            header('location: rescue.php?message=Post%20Added!!');
+            header('location: rescue.php?message=Post%20Updated!!');
             // echo '<a href="rescue.php?message=Post%20Added!!" title="Rescue">Go to Rescue Page</a></div>';
             $_SESSION['registered'] = "Yes";
         }
@@ -113,14 +118,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         // display_error_bucket($error_bucket);
     }
     
+} else {
+    $post_id = $_GET['post_id'];
+
+    $sql = "SELECT * FROM post WHERE post_id=$post_id LIMIT 1";
+
+    $result = $db->query($sql);
+
+    while ($row = $result->fetch_assoc()) {
+        $title = $row['title'];
+        $animal_name = $row['animal_name'];
+        $species = $row['species'];
+        $breed = $row['breed'];
+        $description = $row['description'];
+    }
 }
 
 ?>
 
-<h1>Create a Post</h1>
+<h1>Edit Post</h1>
 
 <!-- form -->
-<form class="col-lg-3 mx-auto" action="new_post.php" method="POST" enctype="multipart/form-data">
+<form class="col-lg-3 mx-auto" action="edit_post.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="title">Title</label>
         <input class="form-control" type="text" id="title" required name="title" value="<?php echo (isset($title) ? $title: '');?>">
@@ -141,6 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <br>
         <input type="file" name="file" id="image">
         <br><br>
+        <input type="hidden" name="id" value="<?php echo (isset($post_id) ? $post_id : '');?>">
     </div>
     <input class="btn btn-primary new-post" type="submit" value="Create Post">
 </form>

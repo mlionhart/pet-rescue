@@ -24,6 +24,9 @@ fetch('helper/is_logged_in.php')
             // hide login button
             const login = document.querySelector('#login')
             login.style.display = 'none'
+            // hide register button
+            // const register = document.querySelector('#register')
+            // register.style.display = 'none'
             // show logout button
             const logout = document.querySelector('#logout')
             logout.style.display = 'inline-block'
@@ -41,13 +44,15 @@ fetch('helper/is_logged_in.php')
                         if (res.status == 'success') {
                             // show login button
                             login.style.display = 'inline-block'
+                            // // show register button
+                            // register.style.display = 'inline-block'
                             // hide logout button
                             logout.style.display = 'none'
                             // add a message to the message div that user has been logged out
                             // document.querySelector('#message').innerHTML = '<p>You have been logged out</p>'
                             // add welcome message to h1
                             // document.querySelector('h1').innerText = 'Welcome to our Site!'
-                            document.location.href = 'home.php'
+                            document.location.href = 'home.php?message=You%20Have%20Been%20Logged%20Out'
                         }
                     })
             })

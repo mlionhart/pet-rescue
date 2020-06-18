@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // query database with built sql
     $result = $db->query($sql);
+    // echo $sql;
 
     // if database query fails, display error message
     if (!$result) {
@@ -36,13 +37,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // create a new directory for the user for images to be stored
         // folder_checker($username);
         // display success message and login link
-        echo '<div>You are now ready to go!';
+        echo '<div>You are now ready to go! &nbsp;';
         echo '<a href="login.php" title="Login Page">Login</a></div>';
         // $_SESSION['registered'] = "Yes";
     }
 }
 
 ?>
+
+
 
 <h1>Register</h1>
 
@@ -64,8 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="last_name">Last Name</label>
         <input class="form-control" type="text" id="last_name" required name="last_name">
     </div>
-    <input class="btn btn-primary" type="submit" value="Register">
+    <input class="btn btn-primary register-form" type="submit" value="Register">
 </form>
+
+<p id="registerMessage" style="text-align:center;">Already have an account? <a href="login.php">Login</a></p>
 <!-- end of form -->
 
 <!-- load JavaScript -->
