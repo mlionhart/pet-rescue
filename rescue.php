@@ -22,7 +22,7 @@ if (isset($_GET['filter'])) {
     if ($filter == 'dogs') {
         $sql = "SELECT * FROM post WHERE species='Dog' order by post_id DESC";
     } elseif ($filter == 'cats') {
-        $sql = "SELECT * FROM post WHERE species='Cat' order by post_id DESC";
+        $sql = "SELECT * FROM post WHERE species='Cat' or species='Tiger' order by post_id DESC";
     } else {
         $sql = "SELECT * FROM post order by post_id DESC";
     }
