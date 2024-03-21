@@ -32,7 +32,7 @@ function display_message(){
     // if message in url
     if (isset($_GET['message'])) {
         $message = $_GET['message'];
-        echo '<div class="mt-4 alert alert-success col-lg-6 mx-auto" role="alert">';
+        echo '<div class="mt-4 alert alert-success col-lg-6 mx-auto text-center" role="alert">';
         echo $message;
         echo '</div>';
     }

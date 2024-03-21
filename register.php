@@ -1,9 +1,12 @@
-<?php require_once 'inc/functions.inc.php';
+<?php 
+ob_start();
+// start session
+session_start();
+
+require_once 'inc/functions.inc.php';
 
 $pageTitle = "Register"; 
 
-// start session
-session_start();
 
 // connect to database
 require_once 'inc/db_connect.inc.php';
@@ -34,15 +37,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo '<div class="reg_div">There was a problem registering your account</div>';
     // if database query is a success
     } else {
-        // create a new directory for the user for images to be stored
-        // folder_checker($username);
-        // display success message and login link
-        echo '<div>You are now ready to go! &nbsp;';
-        echo '<a href="login.php" title="Login Page">Login</a></div>';
-        // $_SESSION['registered'] = "Yes";
+    // create a new directory for the user for images to be stored
+    // folder_checker($username);
+    // display success message and login link
+      header('location: login.php?message=You%20Are%20Ready%20to%20Go!');
+      // echo '<div>You are now ready to go! &nbsp;';
+      // echo '<a href="login.php" title="Login Page">Login</a></div>';
+      // $_SESSION['registered'] = "Yes";
     }
 }
-
+ob_end_flush();
 ?>
 
 <p id="registerMessage" style="text-align:center;margin-top:1em;">Already have an account? <a href="login.php">Login</a></p>

@@ -1,7 +1,10 @@
-<?php $pageTitle = "Login"; 
-
+<?php 
+ob_start();
 // start session
 session_start();
+
+$pageTitle = "Login"; 
+
 
 // connect to database
 require_once 'inc/db_connect.inc.php';
@@ -41,6 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+display_message();
+ob_end_flush();
 ?>
 
 <p id="registerMessage" style="text-align:center;margin-top:1em;">Don't have an account? <a href="register.php">Sign Up</a></p>

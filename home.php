@@ -18,15 +18,15 @@ display_message();
         <li data-target="#slides" data-slide-to="2"></li>
     </ul>
     <div class="carousel-inner">
-        <div class="carousel-item active">
+        <!-- <div class="carousel-item active">
             <img src="img/background-sad.webp" alt="background 1">
             <div class="carousel-caption">
                 <h1 class="display-2">Pet Rescue</h1>
                 <h3 class="homeh3">The #1 Spot for Animal Rescue</h3>
                 <button type="button" class="btn btn-outline-light btn-lg btn-primary"><a href="register.php">Get Started</a></button>
             </div>
-        </div>
-        <div class="carousel-item">
+        </div> -->
+        <div class="carousel-item active">
             <img src="img/background.jpeg" alt="background 2">
             <div class="carousel-caption">
                 <h1 class="display-2">Pet Rescue</h1>

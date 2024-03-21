@@ -1,10 +1,12 @@
-<?php require_once 'inc/functions.inc.php';
+<?php 
+// start session
+session_start();
+
+require_once 'inc/functions.inc.php';
 
 
 $pageTitle = "New Post"; 
 
-// start session
-session_start();
 
 // connect to database
 require_once 'inc/db_connect.inc.php';
