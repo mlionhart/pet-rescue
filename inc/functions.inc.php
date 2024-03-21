@@ -11,10 +11,11 @@ function display_posts($result) {
         //     // echo "<div id=\"delete\"><a href=\"edit_post.php?post_id={$row['post_id']}&user_id={$row['user_id']}\" onclick=\"return confirm('Are you sure?');\">Edit</a>" . ' | ' . "<a href=\"delete_post.php?post_id={$row['post_id']}&user_id={$row['user_id']}\" onclick=\"return confirm('Are you sure?');\">Delete</a></div>";            
         // }
         // only show delete button if current user is the owner of the post
-        if ($row['user_id'] == $_SESSION['user_id']) {
+        if
+    (isset($_SESSION['user_id']) && $row['user_id'] == $_SESSION['user_id']) {
             // echo "<a id=\"delete\" href=\"delete_post.php?post_id={$row['post_id']}&user_id={$row['user_id']}\" onclick=\"return confirm('Are you sure?');\">Delete Post</a>";
             echo "<div id=\"delete\"><a href=\"edit_post.php?post_id={$row['post_id']}&user_id={$row['user_id']}\">Edit</a>" . ' | ' . "<a href=\"delete_post.php?post_id={$row['post_id']}&user_id={$row['user_id']}\" onclick=\"return confirm('Are you sure?');\">Delete</a></div>";
-        }
+        } 
         echo '<p><strong>Date:  &nbsp;</strong>' . $row['created_on'] . '</p>';
         echo '<p><strong>User:  &nbsp;</strong>' . $row['username'] . '</p>';
         echo '<h2 class="card-title">' . $row['title'] . '</h2>';

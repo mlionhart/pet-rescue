@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 // start session
 session_start();
 
@@ -12,10 +13,6 @@ require 'inc/nav.inc.php';
 
 // connect to database
 require_once 'inc/db_connect.inc.php';
-
-if (!isset($_SESSION['loggedin'])) {
-    header('location: home.php?message=You%20Must%20Log%20in%20First!');
-}
 
 if (isset($_GET['filter'])) {
     $filter = $_GET['filter'];
@@ -35,7 +32,7 @@ $result = $db->query($sql);
 
 // display message if any
 display_message();
-
+ob_end_flush();
 ?>
 
 <h1>Rescue</h1>
